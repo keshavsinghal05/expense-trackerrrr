@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="d-flex justify-content-between align-items-center">
+    <h2>Welcome {{ user.username }}</h2>
+
+    <a href="/ui/logout" class="btn btn-danger">Logout</a>
+</div>
+
+<div class="container mt-4">
+
+    <h2>Dashboard</h2>
+
+    <div class="d-flex gap-2 mb-3">
+        <a href="/ui/add-expense" class="btn btn-success">Add Expense</a>
+        <a href="/ui/download-pdf" class="btn btn-primary">Download PDF Report</a>
+        <a href="/ui/email-report" class="btn btn-secondary">Email PDF Report</a>
+    </div>
+
+    <h4>Expenses</h4>
+
+    {% if expenses %}
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for e in expenses %}
+            <tr>
+                <td>{{ e.amount }}</td>
+                <td>{{ e.category }}</td>
+                <td>{{ e.description }}</td>
+                <td>{{ e.expense_date }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-info">No expenses added yet. Use the button above to add your first expense.</div>
+    {% endif %}
+
+    <button onclick="toggleDark()" class="btn btn-dark mb-3" type="button">
+        Toggle Dark Mode
+    </button>
+
+<script>
+function toggleDark() {
+    document.body.classList.toggle("bg-dark");
+    document.body.classList.toggle("text-white");
+}
+</script>
+
+</div>
+
+</body>
+</html>
