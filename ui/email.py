@@ -7,9 +7,9 @@ load_dotenv()
 
 async def send_email(email: str, body: str, attachments: list[str] | None = None):
 
-    username = "kssinghal05@gmail.com"
-    password = "spdgpgrgbcsuhptw"
-    mail_from = "kssinghal05@gmail.com"
+    username = os.getenv("MAIL_USERNAME")
+    password = os.getenv("MAIL_PASSWORD")
+    mail_from = os.getenv("MAIL_FROM")
 
     if not username or not password or not mail_from:
         raise RuntimeError("Email configuration is not fully set.")
