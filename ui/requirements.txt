@@ -3,7 +3,7 @@ uvicorn
 sqlalchemy
 jinja2
 python-multipart
-passlib[bcrypt]
+passlib[bcrypt==4.3.0]
 python-jose[cryptography]
 fastapi-mail
 pandas
