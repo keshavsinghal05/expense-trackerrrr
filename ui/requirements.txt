@@ -3,11 +3,10 @@ uvicorn
 sqlalchemy
 jinja2
 python-multipart
-passlib[bcrypt==4.3.0]
+passlib[bcrypt]
 python-jose[cryptography]
 fastapi-mail
 pandas
 matplotlib
 reportlab
 itsdangerous
-python-dotenv
