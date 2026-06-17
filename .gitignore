@@ -1,1 +1,18 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Database
+expenses.db
+bash/expenses.db
+
+# VS Code settings (optional)
+.vscode/
+
 structure.txt
