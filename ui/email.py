@@ -38,6 +38,8 @@ async def send_email(email: str, body: str, attachments: list[str] | None = None
     print("USERNAME:", username)
     print("PASSWORD LENGTH:", len(password))
     print("MAIL_FROM:", mail_from)
+    print("MAIL_SERVER:", os.getenv("MAIL_SERVER"))
+    print("MAIL_PORT:", os.getenv("MAIL_PORT"))
 
     fm = FastMail(conf)
 
